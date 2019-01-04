@@ -1,0 +1,15 @@
+---
+declared-services:
+  HealthAssistance:
+    label: conversation
+    plan: free
+applications:
+- name: MyHealth
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - HealthAssistance
+  env:
+    NPM_CONFIG_PRODUCTION: false
